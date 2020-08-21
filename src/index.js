@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 app.use(express.json())
+app.use(cors())
 const uuid = require('uuid');
 const arrToString = require('./utils/arrayToString');
 
@@ -78,6 +81,6 @@ app.delete('/repositories/:id', (req, res) => {
     return res.status(204).send();
 })
 
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('backend online... ');
 });
